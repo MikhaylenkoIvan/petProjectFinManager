@@ -1,9 +1,5 @@
 import React from "react";
 import InputCSS from "../styles/Input.css";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
 
 
 const { FormContainer, StyledInput, RadioContainer, RadioButton, RadioButtonText } = InputCSS
