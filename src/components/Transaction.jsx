@@ -10,9 +10,6 @@ const { FormContainer, StyledInput, RadioContainer, RadioButton, RadioButtonText
 const Transaction = () => {
     const [value, setValue] = React.useState('доход');
 
-    // const handleChange = (event) => {
-    // setValue(event.target.value);
-    // };
 
     const setIncome = () => {
         setValue('доход')
