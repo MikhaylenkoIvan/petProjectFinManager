@@ -27,7 +27,7 @@ const InputCSS = {
         flex-direction: column;
         height: auto;
         min-height: 500px;
-        margin: 100px 100px;
+        margin: 100px 20%;
         border-radius: 20px;
         padding: 20px 40px;
         border: 2px solid #D3D3D3;
