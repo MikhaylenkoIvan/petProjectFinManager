@@ -9,13 +9,14 @@ import ResetCSS from "./styles/Reset.css";
 const App = () => {
 
 const [ showPage, setShowPage ] = useState('main')
+const [ data, setData ] = useState([])
 
   return (
     <>
       <ResetCSS />
-      {showPage === 'main' && <Main showPage={showPage} setShowPage={setShowPage} />}
-      {showPage === 'stat' && <Stat showPage={showPage} setShowPage={setShowPage} />}
-      {showPage === 'plan' && <Plan showPage={showPage} setShowPage={setShowPage} />}
+      {showPage === 'main' && <Main data={data} setData={setData} showPage={showPage} setShowPage={setShowPage} />}
+      {showPage === 'stat' && <Stat data={data} setData={setData} showPage={showPage} setShowPage={setShowPage} />}
+      {showPage === 'plan' && <Plan data={data} setData={setData} showPage={showPage} setShowPage={setShowPage} />}
     </>
   );
 }

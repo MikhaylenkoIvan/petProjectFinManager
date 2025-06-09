@@ -20,6 +20,11 @@ const InputCSS = {
         font-family: 'Tecla', sans-serif;
         color: #3A5635;
         font-size: 15px;
+        user-select: none;
+        cursor: pointer;
+        &:active{
+            opacity: 0.9;
+        }
     `,
     FormContainer: styled.div`
         display: flex;
@@ -76,6 +81,26 @@ const InputCSS = {
         color: #3A5635;
         margin-left: 15px;
         user-select: none;
+    `,
+    StyledButton: styled.button`
+        display: block;
+        width: 100%;
+        margin: 10px 0% 40px 0%;
+        height: 55px;
+        border-radius: 20px;
+        left: 20%;
+        padding: 0 20px;
+        border: 2px solid #D58718;
+        @font-face {
+            font-family: 'Tecla';
+            url('/fonts/Tecla normal.otf') format('otf');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        font-family: 'Tecla', sans-serif;
+        color: #3A5635;
+        font-size: 15px;
     `
 }
 

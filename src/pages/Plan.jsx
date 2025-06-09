@@ -6,7 +6,6 @@ function Plan(props) {
   return (
     <>
       <Header showPage={props.showPage} setShowPage={props.setShowPage}/>
-      <h1>HW from plan</h1>
       <Footer />
     </>
   );

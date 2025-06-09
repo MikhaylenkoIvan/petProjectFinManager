@@ -2,13 +2,14 @@ import React from "react";
 import Header from "../views/global/Header";
 import Footer from "../views/global/Footer";
 import Transaction from "../components/Transaction";
+import StatComponent from "../components/StatComponent";
+
 
 function Stat(props) {
   return (
     <>
     <Header showPagee={props.showPage} setShowPage={props.setShowPage} />
-    <h1>HW from stat</h1>
-    <Transaction />
+    <StatComponent data={props.data} setData={props.setData} />
     <Footer />
     </>
   );
