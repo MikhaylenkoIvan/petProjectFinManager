@@ -62,9 +62,8 @@ const Transaction = (props) => {
             setValue('')
             setType('доход')
             setComment('зарплата')
-            alert(props.data)
         } else if (isNaN(value) === true && value.length >= 2 && type) {
-            alert('Проверьте тип данных в поле "сумма транзакции"')
+            alert('Проверьте, что в поле "сумма транзакции" указано число')
             setValue('')
         } else if (isNaN(value) === false && value.length < 2 && type) {
             alert('Поле "сумма транзакции" должно быть длиннее 1 символа')
@@ -82,6 +81,7 @@ const Transaction = (props) => {
                     </RadioContainer>
                     {type === 'доход' && 
                         <RadioContainer style={{ marginLeft: '20px' }}>
+                            <label style={{ display:'block', marginTop:'5px' }}>Тип дохода</label><br />
                             <RadioButton type={'radio'} checked={comment === 'зарплата' ? true : false} onClick={setZp} value={'зарплата'}></RadioButton><RadioButtonText onClick={setZp}>Зарплата</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'премия' ? true : false} onClick={setPrem} value={'премия'}></RadioButton><RadioButtonText onClick={setPrem}>Премия</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'аванс' ? true : false} onClick={setAv} value={'аванс'}></RadioButton><RadioButtonText onClick={setAv}>Аванс</RadioButtonText><br></br>
@@ -92,6 +92,7 @@ const Transaction = (props) => {
                     }
                     {type === 'расход' && 
                         <RadioContainer style={{ marginLeft: '20px' }}>
+                            <label style={{ display:'block', marginTop:'5px' }}>Тип расхода</label><br />
                             <RadioButton type={'radio'} checked={comment === 'продукты' ? true : false} onClick={setProd} value={'продукты'}></RadioButton><RadioButtonText onClick={setProd}>Продукты</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'оплата счетов' ? true : false} onClick={setOpl} value={'оплата счетов'}></RadioButton><RadioButtonText onClick={setOpl}>Оплата счетов</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'транспорт' ? true : false} onClick={setTran} value={'транспорт'}></RadioButton><RadioButtonText onClick={setTran}>Транспорт</RadioButtonText><br></br>

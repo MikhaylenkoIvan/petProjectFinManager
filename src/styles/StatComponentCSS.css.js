@@ -26,6 +26,15 @@ const StatComponentCSS = {
         font-size: 15px;
         font-weight: bold;
         user-select: none;
+        margin-bottom: 10px;
+    `,
+    StatElementData: styled.h1`
+        font-family: 'Tecla', sans-serif;
+        color: #3A5635;
+        font-size: 15px;
+        font-weight: normal;
+        user-select: none;
+        margin-bottom: 10px;
     `
 }
 

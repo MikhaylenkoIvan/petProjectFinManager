@@ -9,7 +9,6 @@ function Main(props) {
     <>
         <Header showPage={props.showPage} setShowPage={props.setShowPage}/>
         <Transaction data={props.data} setData={props.setData}/>
-        {/* <StatComponent data={props.data} setData={props.setData} /> */}
         <Footer />
     </>
   );

@@ -7,10 +7,13 @@ const { Logo } = css
 const { HeaderContainer } = headerCss
 
 function Header(props) {
+  const setMain = () => {
+    props.setShowPage('main')
+  }
   return (
     <>
         <HeaderContainer>
-            <Logo>FINBOOST</Logo>
+            <Logo onClick={setMain}>FINBOOST</Logo>
             <ButtonsContainer showPage={props.showPage} setShowPage={props.setShowPage}/>
         </HeaderContainer>
     </>
