@@ -11,8 +11,8 @@ const ButtonsContainer = (props) => {
     const setStat = () => {
         props.setShowPage('stat')
     }
-    const setPlan = () => {
-        props.setShowPage('plan')
+    const setPiggyBank = () => {
+        props.setShowPage('piggyBank')
     }
 
     return (
@@ -20,7 +20,7 @@ const ButtonsContainer = (props) => {
             <div>
                 <Button onClick={setMain} className="menuButton">Главная</Button>
                 <Button onClick={setStat} className="menuButton">Статистика</Button>
-                <Button onClick={setPlan} className="menuButton">Планирование</Button>
+                <Button onClick={setPiggyBank} className="menuButton">Копилка</Button>
             </div>
         </>
     )
