@@ -6,7 +6,7 @@ const DataListCommentComponent = (props) => {
 
     return(
         <>
-            {props.data.map((item, index) => {
+            {props.filteredData.map((item, index) => {
                 return(
                     <>
                         <StatElementData key={index}>{item.split('::')[2]}</StatElementData>

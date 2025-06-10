@@ -9,7 +9,7 @@ function Stat(props) {
   return (
     <>
     <Header showPagee={props.showPage} setShowPage={props.setShowPage} />
-    <StatComponent data={props.data} setData={props.setData} />
+    <StatComponent data={props.data} setData={props.setData} filteredData={props.filteredData} setFilteredData={props.setFilteredData} typeOfFilteredData={props.typeOfFilteredData} setTypeOfFilteredData={props.setTypeOfFilteredData}/>
     <Footer />
     </>
   );
