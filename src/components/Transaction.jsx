@@ -55,6 +55,11 @@ const Transaction = (props) => {
     const changeValue = (event) => {
         setValue(event.target.value)
     }
+    const changeComment = (event) => {
+        setComment(event.target.value)
+    }
+    const incomeCommentValuesList = ['зарплата', 'премия', 'аванс', 'подарок', 'возврат долга']
+    const expenseCommentValuesList = ['продукты', 'оплата счетов', 'транспорт', 'развлечения', 'путешествия']
     const validation = () => {
         setValue(Number(value))
         if (isNaN(value) === false && value.length >= 2 && type) {
@@ -87,7 +92,8 @@ const Transaction = (props) => {
                             <RadioButton type={'radio'} checked={comment === 'аванс' ? true : false} onClick={setAv} value={'аванс'}></RadioButton><RadioButtonText onClick={setAv}>Аванс</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'подарок' ? true : false} onClick={setPod} value={'подарок'}></RadioButton><RadioButtonText onClick={setPod}>Подарок</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'возврат долга' ? true : false} onClick={setVo} value={'возврат долга'}></RadioButton><RadioButtonText onClick={setVo}>Возврат долга</RadioButtonText><br></br>
-                            <RadioButton type={'radio'} checked={comment === 'другое' ? true : false} onClick={setDr} value={'другое'}></RadioButton><RadioButtonText onClick={setDr}>Другое</RadioButtonText><br></br>
+                            <RadioButton type={'radio'} checked={incomeCommentValuesList.includes(comment) === false ? true : false} onClick={setDr} value={'другое'}></RadioButton><RadioButtonText onClick={setDr}>Другое</RadioButtonText><br></br>
+                            {incomeCommentValuesList.includes(comment) === false && <StyledInput placeholder="Введите комментарий" onChange={changeComment}/>}
                         </RadioContainer>
                     }
                     {type === 'расход' && 
@@ -98,7 +104,8 @@ const Transaction = (props) => {
                             <RadioButton type={'radio'} checked={comment === 'транспорт' ? true : false} onClick={setTran} value={'транспорт'}></RadioButton><RadioButtonText onClick={setTran}>Транспорт</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'развлечения' ? true : false} onClick={setRazvl} value={'развлечения'}></RadioButton><RadioButtonText onClick={setRazvl}>Развлечения</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'путешествия' ? true : false} onClick={setPut} value={'путешествия'}></RadioButton><RadioButtonText onClick={setPut}>Путешествия</RadioButtonText><br></br>
-                            <RadioButton type={'radio'} checked={comment === 'другое' ? true : false} onClick={setDr} value={'другое'}></RadioButton><RadioButtonText onClick={setDr}>Другое</RadioButtonText><br></br>
+                            <RadioButton type={'radio'} checked={expenseCommentValuesList.includes(comment) === false ? true : false} onClick={setDr} value={'другое'}></RadioButton><RadioButtonText onClick={setDr}>Другое</RadioButtonText><br></br>
+                            {expenseCommentValuesList.includes(comment) === false && <StyledInput placeholder="Введите комментарий" onChange={changeComment}/>}
                         </RadioContainer>
                     }
                     <StyledInput onClick={validation} type={'button'} style={{ cursor:'pointer', width:'250px' }} value={'Сохранить транзакцию'}></StyledInput>
