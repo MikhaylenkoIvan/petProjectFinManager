@@ -104,7 +104,8 @@ const piggy = {
         &:active{
             background-color: #D3D3D3
         }
-    `
+    `,
+    
 }
 
 export default piggy

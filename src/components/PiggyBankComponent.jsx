@@ -3,54 +3,50 @@ import piggy from "../styles/PiggyBankStyledComponent.css";
 import InputCSS from "../styles/Input.css";
 import GoalTrackerComponent from "./GoalTracker";
 
-const PiggyBankComponent = () => {
+const PiggyBankComponent = (props) => {
     const { PiggyContainer, AddGoalButton, NewGoalInput, GoalTracker, GoalTrackerButtonsContainer, GoalTrackerButton } = piggy
-    const [showInput, setShowInput] = useState(false)
-    const [goalName, setGoalName] = useState('')
-    const [goalSum, setGoalSum] = useState(0)
-    const [goalsData, setGoalsData] = useState([])
     const changeGoalName = (event) => {
-        setGoalName(event.target.value)
+        props.setGoalName(event.target.value)
     }
     const changeGoalSum = (event) => {
-        setGoalSum(event.target.value)
+        props.setGoalSum(event.target.value)
     }
     const { StyledInput } = InputCSS
     const foo = () => {
-        goalsData.push(`${goalName}::${goalSum}`)
-        return(goalsData)
+        props.goalsData.push(`${props.goalName}::${props.goalSum}`)
+        return(props.goalsData)
     }
     const validation = () => {
-        if (goalName.length >= 2 && isNaN(Number(goalSum)) === false && Number(goalSum) > 0) {
-            setGoalsData(foo())
-            setShowInput(false)
-        } else if (goalName.length < 2 && isNaN(Number(goalSum)) === true) {
+        if (props.goalName.length >= 2 && isNaN(Number(props.goalSum)) === false && Number(props.goalSum) > 0) {
+            props.setGoalsData(foo())
+            props.setShowInput(false)
+        } else if (props.goalName.length < 2 && isNaN(Number(props.goalSum)) === true) {
             alert(`Поле "название цели" должно быть длиннее 2 символов`)
             alert(`В поле "необходимая сумма" должно быть число`)
-        } else if (goalName.length >= 2 && isNaN(Number(goalSum)) === true) {
+        } else if (props.goalName.length >= 2 && isNaN(Number(props.goalSum)) === true) {
             alert(`В поле "необходимая сумма" должно быть число`)
-        } else if (goalName.length < 2 && isNaN(Number(goalSum)) === false && Number(goalSum) > 0) {
+        } else if (props.goalName.length < 2 && isNaN(Number(props.goalSum)) === false && Number(props.goalSum) > 0) {
             alert(`Поле "название цели" должно быть длиннее 2 символов`)
-        } else if (goalName.length > 2 && isNaN(Number(goalSum)) === false && Number(goalSum) <= 0) {
+        } else if (props.goalName.length > 2 && isNaN(Number(props.goalSum)) === false && Number(props.goalSum) <= 0) {
             alert(`В поле "необходимая сумма" должно быть число больше нуля`)
-        } else if (goalName.length < 2 && isNaN(Number(goalSum)) === false && Number(goalSum) <= 0) {
+        } else if (props.goalName.length < 2 && isNaN(Number(props.goalSum)) === false && Number(props.goalSum) <= 0) {
             alert('Поле "название цели" должно содержать более 2 символов')
             alert('В поле "необходимая сумма" должно быть число больше нуля')
         }
     }
-    const changeShowInput = () => setShowInput(!showInput)
+    const changeShowInput = () => props.setShowInput(!props.showInput)
     return(
         <>
             <PiggyContainer>
                 <AddGoalButton onClick={changeShowInput}>Добавить цель</AddGoalButton>
-                {showInput === true && 
+                {props.showInput === true && 
                 <>
                     <NewGoalInput type="text" placeholder="Введите название цели" maxLength={50} onChange={changeGoalName}></NewGoalInput>
                     <NewGoalInput type="text" placeholder="Введите необходимую сумму" maxLength={50} onChange={changeGoalSum}></NewGoalInput>
                     <StyledInput onClick={validation} type={'button'} style={{ margin: '25px 20% 0px 20%', cursor:'pointer', width:'250px' }} value={'Сохранить транзакцию'}></StyledInput>
                 </>
                 }
-                <GoalTrackerComponent goalsData={goalsData} />
+                <GoalTrackerComponent goalsData={props.goalsData} />
             </PiggyContainer>
         </>
     )
