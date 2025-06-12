@@ -63,7 +63,7 @@ const piggy = {
     GoalTracker: styled.div`
         display: flex;
         flex-direction: row;
-        justify-content: end;
+        justify-content: space-between;
         width: 60%;
         margin: 25px 20% 0px 20%;
         height: 55px;
@@ -105,7 +105,25 @@ const piggy = {
             background-color: #D3D3D3
         }
     `,
-    
+    goalDataContainer: styled.div`
+        display: flex;
+        padding-top: 20%
+        height: 60%;
+        justify-content: center;
+        align-items: center;
+        @font-face {
+            font-family: 'Tecla';
+            url('/fonts/Tecla normal.otf') format('otf');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        font-family: 'Tecla', sans-serif;
+        color: #3A5635;
+        font-size: 25px;
+        text-align: center;
+    `
+
 }
 
 export default piggy

@@ -5,6 +5,7 @@ import GoalTrackerComponent from "./GoalTracker";
 
 const PiggyBankComponent = (props) => {
     const { PiggyContainer, AddGoalButton, NewGoalInput, GoalTracker, GoalTrackerButtonsContainer, GoalTrackerButton } = piggy
+    const [id, setId] = useState(1)
     const changeGoalName = (event) => {
         props.setGoalName(event.target.value)
     }
@@ -13,7 +14,8 @@ const PiggyBankComponent = (props) => {
     }
     const { StyledInput } = InputCSS
     const foo = () => {
-        props.goalsData.push(`${props.goalName}::${props.goalSum}`)
+        setId(id + 1)
+        props.goalsData.push(`${props.goalName}::${props.goalSum}::${id}`)
         return(props.goalsData)
     }
     const validation = () => {
