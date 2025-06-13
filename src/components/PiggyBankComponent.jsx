@@ -48,7 +48,7 @@ const PiggyBankComponent = (props) => {
                     <StyledInput onClick={validation} type={'button'} style={{ margin: '25px 20% 0px 20%', cursor:'pointer', width:'250px' }} value={'Сохранить транзакцию'}></StyledInput>
                 </>
                 }
-                <GoalTrackerComponent goalsData={props.goalsData} />
+                <GoalTrackerComponent goalsData={props.goalsData} setGoalsData={props.setGoalsData} />
             </PiggyContainer>
         </>
     )
