@@ -11,6 +11,17 @@ const StatComponentCSS = {
         min-height: 300px; 
         border-radius: 20px;
         gap: 20px;
+        @media (width < 800px) {
+            width: 90%;
+            margin: 100px 5% 40px 5%;
+            justify-content: space-between;
+            padding: 5px;
+        }
+            @media (width < 500px) {
+                width: 95%;
+                margin: 80px 1% 40px 1%;
+                padding: 5px 3px;
+            }
     `,
     StatElement: styled.div`
         border: 2px solid #D3D3D3;
@@ -19,6 +30,13 @@ const StatComponentCSS = {
         height: auto;
         min-height: 100px;
         padding: 20px;
+        @media (width < 550px) {
+            padding: 20px 5px;
+            width: 30%;
+        }
+        @media (width < 500px) {
+            width: 22%; 
+        }
     `,
     StatElementHeder: styled.h1`
         font-family: 'Tecla', sans-serif;
@@ -27,6 +45,10 @@ const StatComponentCSS = {
         font-weight: bold;
         user-select: none;
         margin-bottom: 10px;
+        @media (width < 550px) {
+            width: 50%;
+            font-size: 10px;
+        }
     `,
     StatElementData: styled.h1`
         font-family: 'Tecla', sans-serif;
@@ -35,6 +57,9 @@ const StatComponentCSS = {
         font-weight: normal;
         user-select: none;
         margin-bottom: 10px;
+        @media (width < 550px) {
+            width: 50%;
+        }
     `
 }
 

@@ -5,6 +5,9 @@ const ResetCSS = createGlobalStyle`
 	padding: 0px;
 	margin: 0px;
 	border: none;
+	@media (width < 450px) {
+        box-sizing: content-box !important;
+    }
 }
 
 body {
@@ -17,6 +20,7 @@ body {
 *::after {
 	box-sizing: border-box;
 }
+
 
 /* Links */
 

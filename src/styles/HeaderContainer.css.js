@@ -11,6 +11,9 @@ const headerCss = {
         justify-content: space-between;
         align-items: center;
         padding: 20px 30px;
+        @media (width < 450px) {
+            padding: 0 10px;
+        }
     `
 }
 

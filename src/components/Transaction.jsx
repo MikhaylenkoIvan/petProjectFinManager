@@ -108,7 +108,7 @@ const Transaction = (props) => {
                             {expenseCommentValuesList.includes(comment) === false && <StyledInput placeholder="Введите комментарий" onChange={changeComment}/>}
                         </RadioContainer>
                     }
-                    <StyledInput onClick={validation} type={'button'} style={{ cursor:'pointer', width:'250px' }} value={'Сохранить транзакцию'}></StyledInput>
+                    <StyledInput onClick={validation} type={'button'} style={{ cursor:'pointer', width:'75%', marginLeft: '12.5%' }} value={'Сохранить транзакцию'}></StyledInput>
             </FormContainer>
         </>
     )

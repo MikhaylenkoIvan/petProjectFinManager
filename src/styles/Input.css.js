@@ -3,8 +3,8 @@ import styled from "styled-components";
 const InputCSS = {
     StyledInput: styled.input`
         display: block;
-        width: 100%;
-        margin: 10px 0% 40px 0%;
+        width: 75%;
+        margin: 10px 12.5% 40px 12.5%;
         height: 55px;
         border-radius: 20px;
         left: 20%;
@@ -25,6 +25,10 @@ const InputCSS = {
         &:active{
             opacity: 0.9;
         }
+            @media (width < 550px) {
+                font-size: 11px;
+                padding: 0 5px;
+            }
     `,
     FormContainer: styled.div`
         display: flex;
@@ -35,7 +39,10 @@ const InputCSS = {
         margin: 100px 20%;
         border-radius: 20px;
         padding: 20px 40px;
-        border: 2px solid #D3D3D3;
+        border: 2px solid #D3D3D3;;
+        @media (width < 670px) {
+            margin: 70px 10%;
+        }
     `,
     RadioContainer: styled.div`
         display: block;
@@ -81,11 +88,14 @@ const InputCSS = {
         color: #3A5635;
         margin-left: 15px;
         user-select: none;
+        @media (width < 500px) {
+            font-size: 17px;
+        }
     `,
     StyledButton: styled.button`
         display: block;
-        width: 100%;
-        margin: 10px 0% 40px 0%;
+        width: 75%;
+        margin: 10px 12.5% 40px 12.5%;
         height: 55px;
         border-radius: 20px;
         left: 20%;

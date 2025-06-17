@@ -23,6 +23,13 @@ const ButtonItem = {
         &:active {
             opacity: 0.8;
         }
+        &.menuButton {
+            @media (width < 900px) {
+                display: block;
+                height: 25px;
+                margin-bottom: 10px;
+                padding: 0 7px;
+            }
     `,
 }
 

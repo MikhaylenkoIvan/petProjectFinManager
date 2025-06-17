@@ -22,6 +22,16 @@ const css = {
         }
         cursor: pointer;
         user-select: none;
+        @media (width < 900px) {
+           padding-left: 0; 
+           font-size: 45px;
+        }
+        @media (width < 550px) {
+            font-size: 35px;
+        }
+            @media (width < 450px) {
+            font-size: 30px;
+        }
     `
 }
 

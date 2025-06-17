@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import piggy from "../styles/PiggyBankStyledComponent.css";
+import InputCSS from "../styles/Input.css";
 
 const GoalTrackerComponent = (props) => {
 
+    const [showChangeSum, setShowChangeSum] = useState(false)
+    const [sum, setSum] = useState(0)
     const { GoalTracker, GoalTrackerButtonsContainer, GoalTrackerButton, goalDataContainer } = piggy
+    const { StyledInput } = InputCSS
+
+    const changeShowChangeSum = () => {
+        setShowChangeSum(!showChangeSum)
+    }
+    const changeSum = (event) => {
+        setSum(event.target.value)
+    }
+
     return(
         <>
+            {showChangeSum === true && 
+                <StyledInput onChange={changeSum} style={{ width: '40%', marginLeft: '30%', marginBottom: '0%' }} placeholder="Введите сумму" />
+            }
             {props.goalsData.map((item, index) => {
-                // const alertHw = () => {
-                //     props.goalsData[index] = `${props.goalsData[index].split('::')[0]}::${props.goalsData[index].split('::')[1] - 100}::${props.goalsData[index].split('::')[2]}`
-                //     alert(props.goalsData[index])
-                // }
                 const fukkk = () => {
                     let arrr = []
                         props.goalsData.forEach((item, index) => {
@@ -22,17 +33,7 @@ const GoalTrackerComponent = (props) => {
                         })
                     props.setGoalsData(arrr)
                     }
-                // let a = []
-                // const alertHw = (props) => {
-                //     for(let i = 0; i < props.goalsData.length; i++) {
-                //         if (i === 1) {
-                //             a.push(`${props.goalsData[i].split('::')[0]}::${props.goalsData[i].split('::')[1] - 100}::${props.goalsData[i].split('::')[2]}`)
-                //         } else {
-                //             a.push(props.goalsData[i])
-                //         }
-                //     }
-                //     props.setGoalsData(a)
-                // }
+                
                 return(
                     <> 
                         <GoalTracker key={index}>
@@ -41,7 +42,7 @@ const GoalTrackerComponent = (props) => {
                             <goalDataContainer style={{ display: 'flex', overflow: 'hidden', flexWrap: 'wrap', justifyContent: 'center', width: '25%', alignItems: 'center', fontFamily: 'sans-serif', boxSizing: 'content-box', color: '#3A5635', fontSize: '15px', textAlign: 'center', padding: '10px' }}><h1 style={{width: '100%'}}></h1><h1 style={{width: '100%'}}></h1></goalDataContainer>
                             <GoalTrackerButtonsContainer>
                                 <GoalTrackerButton>{'+'}</GoalTrackerButton>
-                                <GoalTrackerButton onClick={fukkk}>{'-'}</GoalTrackerButton>
+                                <GoalTrackerButton onClick={changeShowChangeSum}>{'-'}</GoalTrackerButton>
                                 <GoalTrackerButton>{'>'}</GoalTrackerButton>
                                 <GoalTrackerButton style={{ fontSize: '14px' }}>del</GoalTrackerButton>
                             </GoalTrackerButtonsContainer>
