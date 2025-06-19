@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Main from "./pages/Main";
 import Stat from "./pages/Stat";
-import PiggyBank from "./pages/PiggyBank";
 import PiggyBank2 from "./pages/PiggyBank2"
 import ResetCSS from "./styles/Reset.css";
 
@@ -24,7 +23,6 @@ const [goalsData, setGoalsData] = useState([])
       <ResetCSS />
       {showPage === 'main' && <Main data={data} setData={setData} showPage={showPage} setShowPage={setShowPage} />}
       {showPage === 'stat' && <Stat data={data} filteredData={filteredData} setFilteredData={setFilteredData} typeOfFilteredData={typeOfFilteredData} setTypeOfFilteredData={setTypeOfFilteredData} setData={setData} showPage={showPage} setShowPage={setShowPage} />}
-      {/* {showPage === 'piggyBank' && <PiggyBank showInput={showInput} setShowInput={setShowInput} goalName={goalName} setGoalName={setGoalName} goalSum={goalSum} setGoalSum={setGoalSum} goalsData={goalsData} setGoalsData={setGoalsData} data={data} setData={setData} showPage={showPage} setShowPage={setShowPage} />} */}
       {showPage === 'piggyBank' && <PiggyBank2 showPage={showPage} setShowPage={setShowPage} />}
     </>
   );

@@ -100,8 +100,8 @@ const PiggyBank2 = (props) => {
                         </GoalTracker>
                         {showChange && 
                         <>
-                            <StyledInput style={{ marginBottom: '0px', borderColor: '#D3D3D3' }} type="number" value={summ > 0 ? summ : ''} onChange={changeSumm} placeholder="Введите сумму"></StyledInput>
-                            <StyledInput type="button" value={'Сохранить'} onClick={() => updateSaved(goal.id, summ)}></StyledInput>
+                            <StyledInput style={{ marginBottom: '15px', marginTop: '10%', borderColor: '#D3D3D3' }} type="number" value={summ > 0 ? summ : ''} onChange={changeSumm} placeholder="Введите сумму"></StyledInput>
+                            <StyledInput style={{ marginBottom: '10000%' }} type="button" value={'Сохранить'} onClick={() => updateSaved(goal.id, summ)}></StyledInput>
                         </>
                         }
                         </>
