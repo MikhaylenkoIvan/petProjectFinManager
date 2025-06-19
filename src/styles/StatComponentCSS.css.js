@@ -12,15 +12,16 @@ const StatComponentCSS = {
         border-radius: 20px;
         gap: 20px;
         @media (width < 800px) {
-            width: 90%;
+            width: 85%;
             margin: 100px 5% 40px 5%;
             justify-content: space-between;
-            padding: 5px;
+            padding: 40px 15px;
+            min-height: 200px;
         }
             @media (width < 500px) {
-                width: 95%;
+                width: 92%;
                 margin: 80px 1% 40px 1%;
-                padding: 5px 3px;
+                padding: 20px 10px;
             }
     `,
     StatElement: styled.div`
@@ -30,6 +31,9 @@ const StatComponentCSS = {
         height: auto;
         min-height: 100px;
         padding: 20px;
+        @media (width < 800px) {
+            border: none;
+        }
         @media (width < 550px) {
             padding: 20px 5px;
             width: 30%;

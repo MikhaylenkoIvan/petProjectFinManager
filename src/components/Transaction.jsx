@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import InputCSS from "../styles/Input.css";
 
 
-const { FormContainer, StyledInput, RadioContainer, RadioButton, RadioButtonText, StyledButton } = InputCSS
+const { FormContainer, StyledInputTransaction, StyledInputButton, StyledInput, RadioContainer, RadioButton, RadioButtonText, StyledButton } = InputCSS
 const Transaction = (props) => {
     const [value, setValue] = useState('')
     const [type, setType] = useState('доход');
@@ -78,14 +78,14 @@ const Transaction = (props) => {
     return(
         <>
             <FormContainer>
-                <StyledInput placeholder="Введите сумму транзакции" onChange={changeValue} value={value}/>
+                <StyledInputTransaction placeholder="Введите сумму транзакции" onChange={changeValue} value={value}/>
                     <RadioContainer>
                         <label style={{ display:'block', marginBottom:'5px' }}>Тип транзакции</label><br />
                         <RadioButton type={'radio'} checked={type === 'доход' ? true : false} onClick={setIncome} value={'доход'}></RadioButton><RadioButtonText onClick={setIncome}>Доход</RadioButtonText><br></br>
                         <RadioButton type={'radio'} checked={type === 'расход' ? true : false} onClick={setExpense} value={'расход'}></RadioButton><RadioButtonText onClick={setExpense}>Расход</RadioButtonText>
                     </RadioContainer>
                     {type === 'доход' && 
-                        <RadioContainer style={{ marginLeft: '20px' }}>
+                        <RadioContainer style={{ marginTop: '25px' }}>
                             <label style={{ display:'block', marginTop:'5px' }}>Тип дохода</label><br />
                             <RadioButton type={'radio'} checked={comment === 'зарплата' ? true : false} onClick={setZp} value={'зарплата'}></RadioButton><RadioButtonText onClick={setZp}>Зарплата</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'премия' ? true : false} onClick={setPrem} value={'премия'}></RadioButton><RadioButtonText onClick={setPrem}>Премия</RadioButtonText><br></br>
@@ -97,7 +97,7 @@ const Transaction = (props) => {
                         </RadioContainer>
                     }
                     {type === 'расход' && 
-                        <RadioContainer style={{ marginLeft: '20px' }}>
+                        <RadioContainer style={{ marginTop: '25px' }}>
                             <label style={{ display:'block', marginTop:'5px' }}>Тип расхода</label><br />
                             <RadioButton type={'radio'} checked={comment === 'продукты' ? true : false} onClick={setProd} value={'продукты'}></RadioButton><RadioButtonText onClick={setProd}>Продукты</RadioButtonText><br></br>
                             <RadioButton type={'radio'} checked={comment === 'оплата счетов' ? true : false} onClick={setOpl} value={'оплата счетов'}></RadioButton><RadioButtonText onClick={setOpl}>Оплата счетов</RadioButtonText><br></br>
@@ -108,7 +108,7 @@ const Transaction = (props) => {
                             {expenseCommentValuesList.includes(comment) === false && <StyledInput placeholder="Введите комментарий" onChange={changeComment}/>}
                         </RadioContainer>
                     }
-                    <StyledInput onClick={validation} type={'button'} style={{ cursor:'pointer', width:'75%', marginLeft: '12.5%' }} value={'Сохранить транзакцию'}></StyledInput>
+                    <StyledInputButton onClick={validation} type={'button'} value={'Сохранить транзакцию'}></StyledInputButton>
             </FormContainer>
         </>
     )

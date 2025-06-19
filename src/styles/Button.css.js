@@ -27,8 +27,14 @@ const ButtonItem = {
             @media (width < 900px) {
                 display: block;
                 height: 25px;
+                width: 100px;
                 margin-bottom: 10px;
-                padding: 0 7px;
+                padding: 0px 7px;
+                margin-top: 10px;
+            }
+            @media (width < 450px) {
+            font-size: 14px;
+                width: 75px;
             }
     `,
 }

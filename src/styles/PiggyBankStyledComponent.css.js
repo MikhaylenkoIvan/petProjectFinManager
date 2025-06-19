@@ -13,8 +13,9 @@ const piggy = {
         border: 2px solid #D3D3D3;
         @media (width < 700px) {
             width: 80%;
-            margin: 20px 10%;
+            margin: 40px 10%;
             padding: 20px 20px;
+            min-height: 300px;
         }
     `,
     AddGoalButton: styled.button`
@@ -45,7 +46,7 @@ const piggy = {
         }
         @media (width < 700px) {
             width: 60%;
-            margin: 5% 20%;
+            margin: 15% 20% 10% 20%;
         }
     `,
     NewGoalInput: styled.input`
@@ -94,8 +95,13 @@ const piggy = {
         border: 2px solid #D58718;
         flex-wrap: wrap;
         @media (width < 700px) {
-            margin: 25px 0 0 0;
-            width: 80%;
+            margin: 0 7% 0 7%;
+            width: 86%;
+        }
+        @media (width < 700px) {
+            margin: 0;
+            width: 90%;
+            padding: 5px 10px;
         }
     `,
     GoalTrackerButtonsContainer: styled.div`

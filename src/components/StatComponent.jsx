@@ -27,7 +27,7 @@ const StatComponent = (props) => {
     return(
         <>
         <StatContainer style={{ flexWrap: 'wrap' }}>
-            <RadioContainer style={{ width: '100%', textAlign: 'center' }}>
+            <RadioContainer style={{ width: '100%', textAlign: 'center', height: '70px' }}>
                 <RadioButton type='radio' checked={props.typeOfFilteredData === 'общее' ? true : false} onClick={setCommon} /><RadioButtonText style={{ marginRight: '20px' }}>Общее</RadioButtonText>
                 <RadioButton type='radio' checked={props.typeOfFilteredData === 'доходы' ? true : false} onClick={setIncomes} /><RadioButtonText style={{ marginRight: '20px' }}>Доходы</RadioButtonText>
                 <RadioButton type='radio' checked={props.typeOfFilteredData === 'расходы' ? true : false} onClick={setExpenses} /><RadioButtonText>Расходы</RadioButtonText>
