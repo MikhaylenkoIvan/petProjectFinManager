@@ -7,12 +7,14 @@ const ButtonsContainer = (props) => {
 
     const setMain = () => {
         props.setShowPage('main')
+        props.setTypeOfFilteredData('общее')
     }
     const setStat = () => {
         props.setShowPage('stat')
     }
     const setPiggyBank = () => {
         props.setShowPage('piggyBank')
+        props.setTypeOfFilteredData('общее')
     }
 
     return (

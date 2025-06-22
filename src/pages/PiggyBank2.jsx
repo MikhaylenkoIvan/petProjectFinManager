@@ -75,7 +75,7 @@ const PiggyBank2 = (props) => {
 
     return(
         <>
-            <Header showPage={props.showPage} setShowPage={props.setShowPage} />
+            <Header setTypeOfFilteredData={props.setTypeOfFilteredData} showPage={props.showPage} setShowPage={props.setShowPage} />
             <AddGoalButton onClick={changeShowNewData}>Новая цель</AddGoalButton>
             {showNewGoal &&
                 <>

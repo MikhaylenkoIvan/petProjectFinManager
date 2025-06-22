@@ -21,7 +21,7 @@ const [goalsData, setGoalsData] = useState([])
   return (
     <>
       <ResetCSS />
-      {showPage === 'main' && <Main data={data} setData={setData} showPage={showPage} setShowPage={setShowPage} />}
+      {showPage === 'main' && <Main data={data} setData={setData} showPage={showPage} setShowPage={setShowPage} setTypeOfFilteredData={setTypeOfFilteredData} />}
       {showPage === 'stat' && <Stat data={data} filteredData={filteredData} setFilteredData={setFilteredData} typeOfFilteredData={typeOfFilteredData} setTypeOfFilteredData={setTypeOfFilteredData} setData={setData} showPage={showPage} setShowPage={setShowPage} />}
       {showPage === 'piggyBank' && <PiggyBank2 showPage={showPage} setShowPage={setShowPage} />}
     </>

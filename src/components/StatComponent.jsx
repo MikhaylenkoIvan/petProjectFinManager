@@ -6,7 +6,7 @@ import DataListCommentComponent from './DataListCommentComponent'
 import InputCSS from "../styles/Input.css";
 
 const StatComponent = (props) => {
-    useEffect(() => {counterFunction(props.data, props.typeOfFilteredData)}, [])
+    useEffect(() => {counterFunction(props.data, props.typeOfFilteredData); props.setFilteredData(props.data)}, [props.typeOfFilteredData])
     
     const counterFunction = (data, state) => {
         let array = 0

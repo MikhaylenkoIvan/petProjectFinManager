@@ -14,7 +14,7 @@ function Header(props) {
     <>
         <HeaderContainer>
             <Logo onClick={setMain}>FINBOOST</Logo>
-            <ButtonsContainer showPage={props.showPage} setShowPage={props.setShowPage}/>
+            <ButtonsContainer showPage={props.showPage} setShowPage={props.setShowPage} setTypeOfFilteredData={props.setTypeOfFilteredData}/>
         </HeaderContainer>
     </>
   );

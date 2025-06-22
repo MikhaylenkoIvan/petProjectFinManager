@@ -7,7 +7,7 @@ import StatComponent from "../components/StatComponent";
 function Main(props) {
   return (
     <>
-        <Header showPage={props.showPage} setShowPage={props.setShowPage}/>
+        <Header setTypeOfFilteredData={props.setTypeOfFilteredData} showPage={props.showPage} setShowPage={props.setShowPage}/>
         <Transaction data={props.data} setData={props.setData}/>
         <Footer />
     </>
